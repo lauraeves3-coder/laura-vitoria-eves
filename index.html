@@ -209,16 +209,6 @@
       background:#220507;
     }
 
-    /*
-      Agora o hero possui DUAS COLUNAS.
-
-      Esquerda:
-      texto + fundo bordô transparente/esfumado.
-
-      Direita:
-      sua foto inteira, sem texto sobre ela.
-    */
-
     .hero-inner{
       min-height:678px;
 
@@ -232,6 +222,12 @@
 
       overflow:hidden;
     }
+
+
+    /* =====================================================
+       PAINEL BORDÔ DO TEXTO
+       TRANSPARENTE + ESFUMAÇADO
+    ===================================================== */
 
     .hero-content{
       min-height:678px;
@@ -250,18 +246,26 @@
 
       color:#fff;
 
-      background:
-        linear-gradient(
-          135deg,
-          rgba(53,9,13,.68),
-          rgba(53,9,13,.58)
-        );
+      /*
+        Mais transparente que antes
+      */
 
-      backdrop-filter:blur(16px);
-      -webkit-backdrop-filter:blur(16px);
+      background:rgba(53,9,13,.58);
+
+      /*
+        Efeito esfumaçado/vidro
+      */
+
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
 
       border-right:1px solid rgba(255,255,255,.10);
     }
+
+
+    /* =====================================================
+       FOTO DO HERO
+    ===================================================== */
 
     .hero-photo{
       position:relative;
@@ -284,10 +288,6 @@
       filter:saturate(.95);
     }
 
-    /*
-      Pequena transição entre o bordô e a foto.
-    */
-
     .hero-photo::before{
       content:"";
 
@@ -308,6 +308,11 @@
           rgba(53,9,13,0)
         );
     }
+
+
+    /* =====================================================
+       TEXTOS DO HERO
+    ===================================================== */
 
     .hero-line{
       width:65px;
@@ -1008,6 +1013,15 @@
           30px
           60px
           24px;
+
+        /*
+          Transparência + desfoque
+        */
+
+        background:rgba(53,9,13,.58);
+
+        backdrop-filter:blur(18px);
+        -webkit-backdrop-filter:blur(18px);
       }
 
       .hero-photo{
@@ -1062,10 +1076,10 @@
       }
 
       .header{
-        background:rgba(53,9,13,.64);
+        background:rgba(53,9,13,.62);
 
-        backdrop-filter:blur(15px);
-        -webkit-backdrop-filter:blur(15px);
+        backdrop-filter:blur(16px);
+        -webkit-backdrop-filter:blur(16px);
       }
 
       .nav{
@@ -1093,10 +1107,6 @@
 
       /* =================================================
          HERO MOBILE
-
-         Texto fica de um lado.
-         Seu rosto fica do outro.
-         Não existe texto por cima da foto.
       ================================================= */
 
       .hero{
@@ -1124,25 +1134,22 @@
 
         justify-content:flex-start;
 
-        background:
-          linear-gradient(
-            150deg,
-            rgba(53,9,13,.76),
-            rgba(53,9,13,.64)
-          );
+        /*
+          BORDÔ MAIS TRANSPARENTE
+          E MAIS ESFUMAÇADO
+        */
 
-        backdrop-filter:blur(15px);
-        -webkit-backdrop-filter:blur(15px);
+        background:rgba(53,9,13,.58);
+
+        backdrop-filter:blur(18px);
+        -webkit-backdrop-filter:blur(18px);
+
+        border-right:1px solid rgba(255,255,255,.10);
       }
 
       .hero-photo{
         min-height:730px;
       }
-
-      /*
-        O posicionamento da imagem foi pensado
-        para manter a pessoa visível na parte direita.
-      */
 
       .hero-photo img{
         object-position:
@@ -1528,7 +1535,6 @@
 
     <!-- =====================================================
          SOBRE
-         FOTO REMOVIDA
     ===================================================== -->
 
     <section
@@ -2104,7 +2110,9 @@
       viewBox="0 0 24 24"
       aria-hidden="true"
     >
+
       <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.6 4.2 1.7 6L0 24l6.3-1.9a11.9 11.9 0 0 0 5.8 1.5h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.1-3.6-8.2ZM12.1 21.6c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.7 1.1 1.1-3.6-.2-.4a9.7 9.7 0 0 1-1.5-5.2c0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.7-9.8 9.7Zm5.4-7.3c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.7.1-.1.3-.3.4-.5.1-.2.2-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3Z"/>
+
     </svg>
 
   </a>
