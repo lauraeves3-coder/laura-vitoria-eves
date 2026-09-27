@@ -47,11 +47,6 @@
       max-width:100%;
     }
 
-    .container{
-      width:min(1120px, calc(100% - 48px));
-      margin:0 auto;
-    }
-
     :root{
       --burgundy:#35090d;
       --burgundy-dark:#250608;
@@ -67,6 +62,11 @@
 
       --text:#302627;
       --muted:#74696a;
+    }
+
+    .container{
+      width:min(1120px, calc(100% - 48px));
+      margin:0 auto;
     }
 
 
@@ -209,6 +209,12 @@
       background:#220507;
     }
 
+    /*
+      A imagem fica por trás de toda a área do hero.
+      Isso é o que permite que o painel bordô tenha
+      o efeito de transparência + desfoque.
+    */
+
     .hero-inner{
       min-height:678px;
 
@@ -221,12 +227,39 @@
       position:relative;
 
       overflow:hidden;
+
+      background:
+        url('assets/office.jpg')
+        center center / cover
+        no-repeat;
+    }
+
+    /*
+      Camada muito suave sobre a imagem.
+    */
+
+    .hero-inner::before{
+      content:"";
+
+      position:absolute;
+
+      inset:0;
+
+      z-index:0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(53,9,13,.35) 0%,
+          rgba(53,9,13,.18) 55%,
+          rgba(53,9,13,0) 100%
+        );
     }
 
 
     /* =====================================================
-       ÁREA BORDÔ DO TEXTO
-       TRANSPARENTE E ESFUMAÇADA
+       PAINEL BORDÔ DO TEXTO
+       TRANSPARENTE + ESFUMAÇADO
     ===================================================== */
 
     .hero-content{
@@ -246,23 +279,39 @@
 
       color:#fff;
 
-      /* ALTERAÇÃO: bordô mais transparente */
-      background:rgba(53,9,13,.58);
+      position:relative;
 
-      /* ALTERAÇÃO: efeito mais esfumaçado */
+      z-index:2;
+
+      /*
+        ESTE É O EFEITO PRINCIPAL:
+
+        o bordô não é sólido;
+        a imagem consegue aparecer
+        suavemente por trás.
+      */
+
+      background:rgba(53,9,13,.64);
+
+      /*
+        Esfumado / vidro
+      */
+
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
 
-      border-right:1px solid rgba(255,255,255,.10);
+      border-right:1px solid rgba(255,255,255,.12);
     }
 
 
     /* =====================================================
-       FOTO DO HERO
+       FOTO DO LADO DIREITO
     ===================================================== */
 
     .hero-photo{
       position:relative;
+
+      z-index:1;
 
       min-height:678px;
 
@@ -298,7 +347,7 @@
       background:
         linear-gradient(
           90deg,
-          rgba(53,9,13,.30),
+          rgba(53,9,13,.20),
           rgba(53,9,13,0)
         );
     }
@@ -511,7 +560,7 @@
 
     /* =====================================================
        SOBRE
-       FOTO REMOVIDA
+       SEM FOTO REPETIDA
     ===================================================== */
 
     .about-content{
@@ -561,7 +610,7 @@
 
     /* =====================================================
        ÁREAS DE ATUAÇÃO
-       CARDS BORDÔ + LETRAS BRANCAS
+       CARDS BORDÔ + TEXTO BRANCO
     ===================================================== */
 
     .areas-grid{
@@ -997,6 +1046,8 @@
         grid-template-columns:
           58%
           42%;
+
+        background-position:center center;
       }
 
       .hero-content{
@@ -1008,7 +1059,7 @@
           60px
           24px;
 
-        background:rgba(53,9,13,.58);
+        background:rgba(53,9,13,.64);
 
         backdrop-filter:blur(18px);
         -webkit-backdrop-filter:blur(18px);
@@ -1065,6 +1116,9 @@
         width:calc(100% - 32px);
       }
 
+
+      /* HEADER MOBILE */
+
       .header{
         background:rgba(53,9,13,.62);
 
@@ -1105,13 +1159,42 @@
         background:#220507;
       }
 
+      /*
+        A imagem fica por trás do painel inteiro.
+        Isso permite o efeito de vidro/esfumado.
+      */
+
       .hero-inner{
         min-height:730px;
 
         grid-template-columns:
           59%
           41%;
+
+        background:
+          url('assets/office.jpg')
+          58% center / cover
+          no-repeat;
       }
+
+      .hero-inner::before{
+        background:
+          linear-gradient(
+            90deg,
+            rgba(53,9,13,.30) 0%,
+            rgba(53,9,13,.15) 60%,
+            rgba(53,9,13,0) 100%
+          );
+      }
+
+
+      /*
+        PAINEL BORDÔ:
+
+        Mais transparente e esfumaçado,
+        deixando a imagem aparecer
+        suavemente por trás.
+      */
 
       .hero-content{
         min-height:730px;
@@ -1124,18 +1207,32 @@
 
         justify-content:flex-start;
 
-        /* BORDÔ TRANSPARENTE E ESFUMAÇADO */
+        position:relative;
 
-        background:rgba(53,9,13,.58);
+        z-index:2;
+
+        background:rgba(53,9,13,.64);
 
         backdrop-filter:blur(18px);
         -webkit-backdrop-filter:blur(18px);
 
-        border-right:1px solid rgba(255,255,255,.10);
+        border-right:1px solid rgba(255,255,255,.12);
       }
+
+
+      /*
+        FOTO DIREITA
+
+        Seu rosto permanece totalmente
+        ao lado do texto.
+      */
 
       .hero-photo{
         min-height:730px;
+
+        position:relative;
+
+        z-index:1;
       }
 
       .hero-photo img{
@@ -1153,6 +1250,9 @@
             rgba(53,9,13,0)
           );
       }
+
+
+      /* TEXTOS */
 
       .hero-line{
         width:45px;
@@ -1350,6 +1450,9 @@
         text-align:center;
       }
 
+
+      /* WHATSAPP */
+
       .whatsapp-float{
         right:16px;
         bottom:16px;
@@ -1357,6 +1460,7 @@
         width:53px;
         height:53px;
       }
+
     }
 
   </style>
@@ -1427,10 +1531,15 @@
 
 
   <!-- =====================================================
-       HERO
+       CONTEÚDO
   ===================================================== -->
 
   <main>
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
 
     <section
       class="hero"
@@ -1445,6 +1554,7 @@
         <div class="hero-content reveal">
 
           <div class="hero-line"></div>
+
 
           <div class="eyebrow">
             Defesa · Direitos · Liberdade
@@ -1512,7 +1622,6 @@
           >
 
         </div>
-
 
       </div>
 
@@ -1644,7 +1753,6 @@
           </article>
 
 
-
           <article class="area-card reveal">
 
             <div class="area-number">
@@ -1664,7 +1772,6 @@
             </p>
 
           </article>
-
 
 
           <article class="area-card reveal">
@@ -1688,7 +1795,6 @@
           </article>
 
 
-
           <article class="area-card reveal">
 
             <div class="area-number">
@@ -1707,7 +1813,6 @@
             </p>
 
           </article>
-
 
 
           <article class="area-card reveal">
@@ -1729,7 +1834,6 @@
             </p>
 
           </article>
-
 
 
           <article class="area-card reveal">
@@ -1826,38 +1930,26 @@
 
 
               <div class="experience-item">
-
                 <span></span>
-
                 Análise individualizada de cada caso
-
               </div>
 
 
               <div class="experience-item">
-
                 <span></span>
-
                 Acompanhamento das diferentes fases processuais
-
               </div>
 
 
               <div class="experience-item">
-
                 <span></span>
-
                 Comunicação clara sobre o andamento do processo
-
               </div>
 
 
               <div class="experience-item">
-
                 <span></span>
-
                 Estratégia jurídica adequada às particularidades do caso
-
               </div>
 
 
@@ -1929,7 +2021,6 @@
           </div>
 
 
-
           <div class="process-card reveal">
 
             <div class="process-number">
@@ -1950,7 +2041,6 @@
           </div>
 
 
-
           <div class="process-card reveal">
 
             <div class="process-number">
@@ -1969,7 +2059,6 @@
             </p>
 
           </div>
-
 
 
           <div class="process-card reveal">
