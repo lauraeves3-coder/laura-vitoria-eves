@@ -8,16 +8,16 @@
 
   <meta
     name="description"
-    content="Laura Vitória Eves, Advogada Criminal. Atuação em Direito Penal, Processo Penal, Execução Penal e defesa criminal."
+    content="Laura Vitória Eves, Advogada Criminal. Atuação em Direito Penal, Processo Penal e Execução Penal."
   >
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
   <style>
 
-    /* =========================================================
+    /* =====================================================
        RESET
-    ========================================================= */
+    ===================================================== */
 
     *{
       margin:0;
@@ -30,16 +30,11 @@
     }
 
     body{
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:Arial, Helvetica, sans-serif;
       background:#f7f2ec;
-      color:#21191a;
+      color:#2c2223;
       line-height:1.6;
       overflow-x:hidden;
-    }
-
-    img{
-      max-width:100%;
-      display:block;
     }
 
     a{
@@ -47,44 +42,44 @@
       color:inherit;
     }
 
+    img{
+      display:block;
+      max-width:100%;
+    }
+
     .container{
       width:min(1120px, calc(100% - 48px));
       margin:0 auto;
     }
 
-
-    /* =========================================================
-       CORES
-    ========================================================= */
-
     :root{
       --burgundy:#35090d;
-      --burgundy-dark:#260608;
-      --burgundy-light:#54151b;
+      --burgundy-dark:#250608;
+      --burgundy-light:#56151b;
 
       --cream:#f7f2ec;
       --cream-soft:#eee5dc;
 
       --gold:#d9b77b;
-      --gold-light:#e7cc9d;
-
-      --black:#181314;
-      --text:#302526;
-      --muted:#706466;
+      --gold-light:#ead19f;
 
       --white:#ffffff;
+
+      --text:#302627;
+      --muted:#74696a;
     }
 
 
-    /* =========================================================
+    /* =====================================================
        HEADER
-    ========================================================= */
+    ===================================================== */
 
     .header{
       position:fixed;
       top:0;
       left:0;
       right:0;
+
       z-index:1000;
 
       background:rgba(53,9,13,.62);
@@ -94,8 +89,7 @@
 
       border-bottom:1px solid rgba(255,255,255,.10);
 
-      box-shadow:
-        0 8px 30px rgba(0,0,0,.12);
+      box-shadow:0 8px 30px rgba(0,0,0,.12);
     }
 
     .nav{
@@ -115,37 +109,44 @@
       color:#fff;
 
       line-height:1.1;
-      letter-spacing:.02em;
     }
 
     .brand strong{
       font-family:Georgia, "Times New Roman", serif;
+
       font-size:23px;
-      font-weight:500;
+
+      font-weight:400;
+
+      letter-spacing:.01em;
     }
 
     .brand small{
-      margin-top:6px;
+      margin-top:7px;
 
       color:rgba(255,255,255,.72);
 
       font-size:10px;
+
       text-transform:uppercase;
+
       letter-spacing:.25em;
     }
 
     .navlinks{
       display:flex;
       align-items:center;
+
       gap:30px;
 
-      color:rgba(255,255,255,.90);
+      color:rgba(255,255,255,.88);
 
       font-size:14px;
     }
 
     .navlinks a{
       position:relative;
+
       padding:7px 0;
 
       transition:.25s ease;
@@ -155,6 +156,7 @@
       content:"";
 
       position:absolute;
+
       left:0;
       bottom:0;
 
@@ -190,135 +192,152 @@
 
     .nav-cta:hover{
       background:rgba(255,255,255,.10);
+
       border-color:rgba(255,255,255,.75);
     }
 
 
-    /* =========================================================
+    /* =====================================================
        HERO
-    ========================================================= */
+    ===================================================== */
 
     .hero{
       min-height:760px;
 
+      padding-top:82px;
+
+      background:#220507;
+    }
+
+    /*
+      Agora o hero possui DUAS COLUNAS.
+
+      Esquerda:
+      texto + fundo bordô transparente/esfumado.
+
+      Direita:
+      sua foto inteira, sem texto sobre ela.
+    */
+
+    .hero-inner{
+      min-height:678px;
+
+      display:grid;
+
+      grid-template-columns:
+        56%
+        44%;
+
       position:relative;
+
       overflow:hidden;
+    }
+
+    .hero-content{
+      min-height:678px;
+
+      padding:
+        95px
+        55px
+        80px
+        max(0px, calc((100vw - 1120px) / 2));
 
       display:flex;
-      align-items:stretch;
+
+      flex-direction:column;
+
+      justify-content:center;
 
       color:#fff;
 
       background:
-        url("assets/office.jpg")
-        center center /
-        cover
-        no-repeat;
-    }
-
-    /*
-      Camada geral muito suave sobre a foto.
-      Ela não deixa a imagem excessivamente escura.
-    */
-
-    .hero::after{
-      content:"";
-
-      position:absolute;
-      inset:0;
-
-      z-index:0;
-
-      background:
         linear-gradient(
-          90deg,
-          rgba(53,9,13,.10) 0%,
-          rgba(53,9,13,.03) 55%,
-          rgba(53,9,13,.12) 100%
+          135deg,
+          rgba(53,9,13,.68),
+          rgba(53,9,13,.58)
         );
-
-      pointer-events:none;
-    }
-
-
-    /*
-      PAINEL BORDÔ
-
-      É aqui que acontece o efeito que você pediu:
-      o fundo das escritas fica igual ao cabeçalho,
-      transparente + esfumaçado.
-    */
-
-    .hero-panel{
-      position:absolute;
-
-      top:0;
-      left:0;
-
-      width:55%;
-      height:100%;
-
-      z-index:1;
-
-      background:rgba(53,9,13,.62);
 
       backdrop-filter:blur(16px);
       -webkit-backdrop-filter:blur(16px);
 
-      border-right:1px solid rgba(255,255,255,.08);
+      border-right:1px solid rgba(255,255,255,.10);
     }
 
-
-    .hero .container{
+    .hero-photo{
       position:relative;
+
+      min-height:678px;
+
+      overflow:hidden;
+
+      background:#180405;
+    }
+
+    .hero-photo img{
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+
+      object-position:center center;
+
+      filter:saturate(.95);
+    }
+
+    /*
+      Pequena transição entre o bordô e a foto.
+    */
+
+    .hero-photo::before{
+      content:"";
+
+      position:absolute;
+
+      left:0;
+      top:0;
+      bottom:0;
+
+      width:80px;
+
       z-index:2;
 
-      display:flex;
-      align-items:center;
-    }
-
-    .hero-content{
-      width:55%;
-      max-width:620px;
-
-      min-height:760px;
-
-      padding:
-        135px
-        50px
-        90px
-        0;
-
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(53,9,13,.30),
+          rgba(53,9,13,0)
+        );
     }
 
     .hero-line{
-      width:70px;
+      width:65px;
       height:2px;
 
       background:var(--gold);
 
-      margin-bottom:22px;
+      margin-bottom:20px;
     }
 
     .eyebrow{
       color:var(--gold-light);
 
-      font-size:12px;
-      font-weight:600;
+      font-size:11px;
+
+      font-weight:700;
 
       text-transform:uppercase;
-      letter-spacing:.25em;
+
+      letter-spacing:.24em;
 
       margin-bottom:18px;
     }
 
     .hero h1{
+      max-width:650px;
+
       font-family:Georgia, "Times New Roman", serif;
 
-      font-size:clamp(38px, 4.3vw, 58px);
+      font-size:clamp(38px,4.3vw,58px);
 
       font-weight:400;
 
@@ -332,45 +351,49 @@
     }
 
     .hero-sub{
-      max-width:570px;
+      max-width:560px;
 
-      color:rgba(255,255,255,.82);
+      color:rgba(255,255,255,.84);
 
-      font-size:17px;
+      font-size:16px;
 
       line-height:1.7;
 
-      margin-bottom:18px;
+      margin-bottom:17px;
     }
 
     .hero-copy{
-      max-width:560px;
+      max-width:550px;
 
       color:rgba(255,255,255,.65);
 
-      font-size:14px;
+      font-size:13px;
 
       line-height:1.75;
 
-      margin-bottom:32px;
+      margin-bottom:30px;
     }
 
     .actions{
       display:flex;
+
       align-items:center;
+
       flex-wrap:wrap;
 
-      gap:14px;
+      gap:13px;
     }
 
     .btn{
-      min-height:52px;
+      min-height:51px;
 
       display:inline-flex;
+
       align-items:center;
+
       justify-content:center;
 
-      padding:0 24px;
+      padding:0 23px;
 
       border-radius:4px;
 
@@ -384,7 +407,7 @@
 
       color:var(--burgundy);
 
-      font-weight:600;
+      font-weight:700;
     }
 
     .btn-primary:hover{
@@ -394,30 +417,30 @@
     }
 
     .btn-outline{
-      border:1px solid rgba(255,255,255,.55);
-
       color:#fff;
+
+      border:1px solid rgba(255,255,255,.55);
 
       background:rgba(255,255,255,.02);
     }
 
     .btn-outline:hover{
-      background:rgba(255,255,255,.08);
+      background:rgba(255,255,255,.09);
 
       border-color:#fff;
     }
 
 
-    /* =========================================================
-       SEÇÕES GERAIS
-    ========================================================= */
+    /* =====================================================
+       SEÇÕES
+    ===================================================== */
 
     section{
       scroll-margin-top:90px;
     }
 
     .section{
-      padding:105px 0;
+      padding:100px 0;
     }
 
     .section-light{
@@ -430,13 +453,14 @@
 
     .section-dark{
       background:var(--burgundy-dark);
+
       color:#fff;
     }
 
     .section-heading{
       max-width:700px;
 
-      margin:0 auto 55px;
+      margin:0 auto 50px;
 
       text-align:center;
     }
@@ -445,16 +469,20 @@
       color:var(--gold);
 
       font-size:11px;
+
       font-weight:700;
 
       text-transform:uppercase;
+
       letter-spacing:.25em;
 
-      margin-bottom:14px;
+      margin-bottom:13px;
     }
 
     .section-heading h2{
       font-family:Georgia, "Times New Roman", serif;
+
+      color:var(--burgundy);
 
       font-size:clamp(32px,4vw,46px);
 
@@ -462,13 +490,7 @@
 
       line-height:1.15;
 
-      color:var(--burgundy);
-
-      margin-bottom:18px;
-    }
-
-    .section-dark .section-heading h2{
-      color:#fff;
+      margin-bottom:17px;
     }
 
     .section-heading p{
@@ -479,86 +501,52 @@
       line-height:1.8;
     }
 
+    .section-dark .section-heading h2{
+      color:#fff;
+    }
+
     .section-dark .section-heading p{
       color:rgba(255,255,255,.68);
     }
 
 
-    /* =========================================================
+    /* =====================================================
        SOBRE
-    ========================================================= */
+       FOTO REMOVIDA
+    ===================================================== */
 
-    .about-grid{
-      display:grid;
+    .about-content{
+      max-width:850px;
 
-      grid-template-columns:
-        minmax(0,1fr)
-        minmax(0,1fr);
+      margin:0 auto;
 
-      gap:70px;
-
-      align-items:center;
+      text-align:center;
     }
 
-    .about-image{
-      position:relative;
-    }
-
-    .about-image img{
-      width:100%;
-
-      height:520px;
-
-      object-fit:cover;
-
-      border-radius:2px;
-    }
-
-    .about-image::after{
-      content:"";
-
-      position:absolute;
-
-      left:20px;
-      bottom:-20px;
-
-      width:100%;
-      height:100%;
-
-      border:1px solid var(--gold);
-
-      z-index:0;
-    }
-
-    .about-image img{
-      position:relative;
-      z-index:1;
-    }
-
-    .about-text{
-      max-width:520px;
-    }
-
-    .about-text h3{
+    .about-content h3{
       font-family:Georgia, "Times New Roman", serif;
 
       color:var(--burgundy);
 
-      font-size:32px;
+      font-size:38px;
 
       font-weight:400;
 
-      margin-bottom:20px;
+      line-height:1.2;
+
+      margin-bottom:25px;
     }
 
-    .about-text p{
+    .about-content p{
+      max-width:760px;
+
+      margin:0 auto 17px;
+
       color:var(--muted);
 
       font-size:15px;
 
-      line-height:1.85;
-
-      margin-bottom:18px;
+      line-height:1.9;
     }
 
     .about-signature{
@@ -572,9 +560,10 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        ÁREAS DE ATUAÇÃO
-    ========================================================= */
+       CARDS BORDÔ + LETRAS BRANCAS
+    ===================================================== */
 
     .areas-grid{
       display:grid;
@@ -588,24 +577,34 @@
     .area-card{
       position:relative;
 
+      min-height:230px;
+
       padding:32px 28px;
 
-      min-height:220px;
+      background:
+        linear-gradient(
+          145deg,
+          #4a1117,
+          #35090d
+        );
 
-      background:#fff;
+      border:1px solid rgba(217,183,123,.22);
 
-      border:1px solid rgba(53,9,13,.08);
+      color:#fff;
 
       transition:.3s ease;
+
+      box-shadow:
+        0 10px 30px rgba(53,9,13,.08);
     }
 
     .area-card:hover{
       transform:translateY(-5px);
 
-      border-color:rgba(53,9,13,.22);
+      border-color:rgba(217,183,123,.50);
 
       box-shadow:
-        0 18px 45px rgba(53,9,13,.08);
+        0 18px 40px rgba(53,9,13,.18);
     }
 
     .area-number{
@@ -613,42 +612,44 @@
 
       font-family:Georgia, "Times New Roman", serif;
 
-      font-size:18px;
+      font-size:19px;
 
       margin-bottom:20px;
     }
 
     .area-card h3{
-      color:var(--burgundy);
+      color:#fff;
 
       font-family:Georgia, "Times New Roman", serif;
 
-      font-size:22px;
+      font-size:23px;
 
       font-weight:400;
 
-      margin-bottom:12px;
+      line-height:1.25;
+
+      margin-bottom:13px;
     }
 
     .area-card p{
-      color:var(--muted);
+      color:rgba(255,255,255,.72);
 
       font-size:13px;
 
-      line-height:1.7;
+      line-height:1.75;
     }
 
 
-    /* =========================================================
+    /* =====================================================
        EXPERIÊNCIA
-    ========================================================= */
+    ===================================================== */
 
     .experience{
       display:grid;
 
       grid-template-columns:
-        1.05fr
-        .95fr;
+        1fr
+        1fr;
 
       gap:65px;
 
@@ -662,7 +663,7 @@
         1fr
         .78fr;
 
-      gap:16px;
+      gap:15px;
 
       align-items:end;
     }
@@ -676,11 +677,11 @@
     }
 
     .experience-images img:first-child{
-      height:450px;
+      height:440px;
     }
 
     .experience-images img:last-child{
-      height:330px;
+      height:320px;
     }
 
     .experience-text h2{
@@ -704,23 +705,25 @@
 
       line-height:1.85;
 
-      margin-bottom:20px;
+      margin-bottom:18px;
     }
 
     .experience-list{
       margin-top:28px;
 
       display:flex;
+
       flex-direction:column;
 
-      gap:15px;
+      gap:14px;
     }
 
     .experience-item{
       display:flex;
+
       align-items:flex-start;
 
-      gap:13px;
+      gap:12px;
 
       color:rgba(255,255,255,.82);
 
@@ -741,9 +744,9 @@
     }
 
 
-    /* =========================================================
-       COMO FUNCIONA
-    ========================================================= */
+    /* =====================================================
+       PROCESSO
+    ===================================================== */
 
     .process-grid{
       display:grid;
@@ -757,17 +760,19 @@
     .process-card{
       text-align:center;
 
-      padding:15px 15px 10px;
+      padding:15px;
     }
 
     .process-number{
       width:58px;
       height:58px;
 
-      margin:0 auto 22px;
+      margin:0 auto 21px;
 
       display:flex;
+
       align-items:center;
+
       justify-content:center;
 
       border:1px solid var(--gold);
@@ -778,7 +783,7 @@
 
       font-family:Georgia, "Times New Roman", serif;
 
-      font-size:20px;
+      font-size:19px;
     }
 
     .process-card h3{
@@ -790,7 +795,7 @@
 
       font-weight:400;
 
-      margin-bottom:12px;
+      margin-bottom:11px;
     }
 
     .process-card p{
@@ -802,9 +807,9 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        CTA
-    ========================================================= */
+    ===================================================== */
 
     .cta{
       padding:90px 0;
@@ -813,7 +818,7 @@
         linear-gradient(
           135deg,
           rgba(53,9,13,.98),
-          rgba(84,21,27,.95)
+          rgba(84,21,27,.96)
         );
 
       color:#fff;
@@ -854,13 +859,13 @@
 
       color:var(--burgundy);
 
-      font-weight:600;
+      font-weight:700;
     }
 
 
-    /* =========================================================
+    /* =====================================================
        FOOTER
-    ========================================================= */
+    ===================================================== */
 
     footer{
       padding:35px 0;
@@ -874,6 +879,7 @@
       display:flex;
 
       align-items:center;
+
       justify-content:space-between;
 
       gap:30px;
@@ -888,17 +894,17 @@
     }
 
     .footer-text{
+      text-align:right;
+
       font-size:12px;
 
       line-height:1.6;
-
-      text-align:right;
     }
 
 
-    /* =========================================================
+    /* =====================================================
        WHATSAPP FLUTUANTE
-    ========================================================= */
+    ===================================================== */
 
     .whatsapp-float{
       position:fixed;
@@ -908,11 +914,13 @@
 
       z-index:999;
 
-      width:58px;
-      height:58px;
+      width:56px;
+      height:56px;
 
       display:flex;
+
       align-items:center;
+
       justify-content:center;
 
       border-radius:50%;
@@ -921,8 +929,6 @@
 
       color:#fff;
 
-      font-size:25px;
-
       box-shadow:
         0 10px 30px rgba(0,0,0,.20);
 
@@ -930,18 +936,25 @@
     }
 
     .whatsapp-float:hover{
-      transform:translateY(-4px) scale(1.03);
+      transform:translateY(-4px);
+    }
+
+    .whatsapp-float svg{
+      width:27px;
+      height:27px;
+
+      fill:#fff;
     }
 
 
-    /* =========================================================
+    /* =====================================================
        ANIMAÇÃO
-    ========================================================= */
+    ===================================================== */
 
     .reveal{
       opacity:0;
 
-      transform:translateY(25px);
+      transform:translateY(24px);
 
       transition:
         opacity .7s ease,
@@ -955,9 +968,9 @@
     }
 
 
-    /* =========================================================
-       RESPONSIVO
-    ========================================================= */
+    /* =====================================================
+       TABLET
+    ===================================================== */
 
     @media(max-width:900px){
 
@@ -976,60 +989,46 @@
       }
 
       .hero{
-        min-height:730px;
-
-        background-position:
-          68% center;
+        padding-top:74px;
       }
 
-      .hero-panel{
-        width:64%;
+      .hero-inner{
+        min-height:700px;
 
-        background:rgba(53,9,13,.64);
-
-        backdrop-filter:blur(14px);
-        -webkit-backdrop-filter:blur(14px);
-      }
-
-      .hero .container{
-        align-items:stretch;
+        grid-template-columns:
+          58%
+          42%;
       }
 
       .hero-content{
-        width:64%;
-
-        min-height:730px;
+        min-height:700px;
 
         padding:
-          125px
-          25px
+          75px
+          30px
           60px
-          0;
+          24px;
+      }
 
-        justify-content:flex-start;
+      .hero-photo{
+        min-height:700px;
       }
 
       .hero h1{
-        font-size:clamp(34px,7vw,48px);
+        font-size:
+          clamp(34px,5vw,48px);
       }
 
       .hero-sub{
-        font-size:15px;
+        font-size:14px;
       }
 
       .hero-copy{
-        font-size:13px;
+        font-size:12px;
       }
 
-      .about-grid,
-      .experience{
-        grid-template-columns:1fr;
-
-        gap:50px;
-      }
-
-      .about-text{
-        max-width:none;
+      .about-content h3{
+        font-size:34px;
       }
 
       .areas-grid{
@@ -1037,34 +1036,46 @@
           repeat(2,1fr);
       }
 
+      .experience{
+        grid-template-columns:1fr;
+
+        gap:50px;
+      }
+
       .process-grid{
         grid-template-columns:
           repeat(2,1fr);
 
-        row-gap:45px;
-      }
-
-      .experience-text h2{
-        font-size:36px;
+        row-gap:40px;
       }
     }
 
 
+    /* =====================================================
+       CELULAR
+    ===================================================== */
+
     @media(max-width:600px){
 
       .container{
-        width:min(100% - 34px, 1120px);
+        width:calc(100% - 32px);
       }
 
       .header{
         background:rgba(53,9,13,.64);
 
-        backdrop-filter:blur(14px);
-        -webkit-backdrop-filter:blur(14px);
+        backdrop-filter:blur(15px);
+        -webkit-backdrop-filter:blur(15px);
+      }
+
+      .nav{
+        min-height:72px;
+
+        gap:12px;
       }
 
       .brand strong{
-        font-size:19px;
+        font-size:20px;
       }
 
       .brand small{
@@ -1074,84 +1085,122 @@
       }
 
       .nav-cta{
-        padding:8px 11px;
+        padding:8px 13px;
 
         font-size:11px;
       }
 
 
-      /* HERO MOBILE */
+      /* =================================================
+         HERO MOBILE
+
+         Texto fica de um lado.
+         Seu rosto fica do outro.
+         Não existe texto por cima da foto.
+      ================================================= */
 
       .hero{
-        min-height:720px;
+        padding-top:72px;
 
-        background:
-          url("assets/office.jpg")
-          72% center /
-          cover
-          no-repeat;
+        background:#220507;
       }
 
-      .hero-panel{
-        width:68%;
+      .hero-inner{
+        min-height:730px;
 
-        background:rgba(53,9,13,.66);
+        grid-template-columns:
+          59%
+          41%;
+      }
+
+      .hero-content{
+        min-height:730px;
+
+        padding:
+          65px
+          13px
+          45px
+          16px;
+
+        justify-content:flex-start;
+
+        background:
+          linear-gradient(
+            150deg,
+            rgba(53,9,13,.76),
+            rgba(53,9,13,.64)
+          );
 
         backdrop-filter:blur(15px);
         -webkit-backdrop-filter:blur(15px);
       }
 
-      .hero-content{
-        width:68%;
+      .hero-photo{
+        min-height:730px;
+      }
 
-        min-height:720px;
+      /*
+        O posicionamento da imagem foi pensado
+        para manter a pessoa visível na parte direita.
+      */
 
-        padding:
-          115px
-          17px
-          45px
-          0;
+      .hero-photo img{
+        object-position:
+          55% center;
+      }
 
-        justify-content:flex-start;
+      .hero-photo::before{
+        width:25px;
+
+        background:
+          linear-gradient(
+            90deg,
+            rgba(53,9,13,.18),
+            rgba(53,9,13,0)
+          );
       }
 
       .hero-line{
-        width:48px;
+        width:45px;
 
-        margin-bottom:17px;
+        margin-bottom:15px;
       }
 
       .eyebrow{
-        font-size:9px;
+        font-size:8px;
 
-        letter-spacing:.17em;
+        letter-spacing:.14em;
 
-        margin-bottom:14px;
+        line-height:1.4;
+
+        margin-bottom:13px;
       }
 
       .hero h1{
         font-size:
-          clamp(30px,8.5vw,40px);
+          clamp(29px,8.3vw,39px);
 
-        line-height:1.08;
+        line-height:1.06;
 
-        margin-bottom:20px;
+        letter-spacing:-.025em;
+
+        margin-bottom:18px;
       }
 
       .hero-sub{
-        font-size:13px;
+        font-size:11.5px;
 
-        line-height:1.6;
+        line-height:1.58;
 
         margin-bottom:12px;
       }
 
       .hero-copy{
-        font-size:11.5px;
+        font-size:10.5px;
 
-        line-height:1.65;
+        line-height:1.62;
 
-        margin-bottom:22px;
+        margin-bottom:20px;
       }
 
       .actions{
@@ -1159,74 +1208,95 @@
 
         align-items:stretch;
 
-        gap:9px;
+        gap:8px;
       }
 
       .btn{
         width:100%;
 
-        min-height:47px;
+        min-height:45px;
 
-        padding:0 12px;
+        padding:0 7px;
 
-        font-size:12px;
+        font-size:10.5px;
+
+        text-align:center;
       }
 
 
-      /* SEÇÕES */
+      /* =================================================
+         SOBRE
+      ================================================= */
 
       .section{
         padding:75px 0;
       }
 
+      .about-content h3{
+        font-size:30px;
+      }
+
+      .about-content p{
+        font-size:14px;
+
+        line-height:1.8;
+      }
+
+
+      /* =================================================
+         ÁREAS
+      ================================================= */
+
       .section-heading{
-        margin-bottom:38px;
+        margin-bottom:36px;
       }
 
       .section-heading h2{
-        font-size:32px;
+        font-size:31px;
       }
 
       .section-heading p{
-        font-size:14px;
+        font-size:13px;
       }
-
-
-      /* SOBRE */
-
-      .about-image img{
-        height:390px;
-      }
-
-      .about-image::after{
-        left:12px;
-        bottom:-12px;
-      }
-
-      .about-text h3{
-        font-size:29px;
-      }
-
-
-      /* ÁREAS */
 
       .areas-grid{
         grid-template-columns:1fr;
 
-        gap:12px;
+        gap:14px;
       }
 
       .area-card{
         min-height:auto;
 
-        padding:27px 23px;
+        padding:28px 25px;
+      }
+
+      .area-number{
+        font-size:18px;
+
+        margin-bottom:18px;
+      }
+
+      .area-card h3{
+        font-size:24px;
+
+        margin-bottom:11px;
+      }
+
+      .area-card p{
+        font-size:13px;
+
+        line-height:1.7;
       }
 
 
-      /* EXPERIÊNCIA */
+      /* =================================================
+         EXPERIÊNCIA
+      ================================================= */
 
       .experience-images{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:
+          1fr 1fr;
 
         gap:10px;
       }
@@ -1236,7 +1306,7 @@
       }
 
       .experience-images img:last-child{
-        height:230px;
+        height:220px;
       }
 
       .experience-text h2{
@@ -1244,7 +1314,9 @@
       }
 
 
-      /* PROCESSO */
+      /* =================================================
+         PROCESSO
+      ================================================= */
 
       .process-grid{
         grid-template-columns:1fr;
@@ -1253,14 +1325,16 @@
       }
 
 
-      /* CTA */
+      /* =================================================
+         CTA
+      ================================================= */
 
       .cta{
         padding:70px 0;
       }
 
       .cta h2{
-        font-size:34px;
+        font-size:33px;
       }
 
       .cta p{
@@ -1268,7 +1342,9 @@
       }
 
 
-      /* FOOTER */
+      /* =================================================
+         FOOTER
+      ================================================= */
 
       .footer-inner{
         flex-direction:column;
@@ -1296,17 +1372,22 @@
 <body>
 
 
-  <!-- =======================================================
-       HEADER
-  ======================================================== -->
+  <!-- =====================================================
+       CABEÇALHO
+  ===================================================== -->
 
   <header class="header">
 
     <div class="container nav">
 
-      <a href="#inicio" class="brand">
+      <a
+        href="#inicio"
+        class="brand"
+      >
 
-        <strong>Laura Vitória Eves</strong>
+        <strong>
+          Laura Vitória Eves
+        </strong>
 
         <small>
           Advogada Criminal
@@ -1351,24 +1432,25 @@
 
 
 
-  <!-- =======================================================
+  <!-- =====================================================
        HERO
-  ======================================================== -->
+  ===================================================== -->
 
   <main>
 
-    <section class="hero" id="inicio">
+    <section
+      class="hero"
+      id="inicio"
+    >
 
-      <!-- Fundo bordô transparente/esfumado -->
-      <div class="hero-panel"></div>
+      <div class="hero-inner">
 
 
-      <div class="container">
+        <!-- TEXTO -->
 
         <div class="hero-content reveal">
 
           <div class="hero-line"></div>
-
 
           <div class="eyebrow">
             Defesa · Direitos · Liberdade
@@ -1384,17 +1466,21 @@
 
 
           <div class="hero-sub">
+
             Atuação em Direito Penal e Processo Penal,
             com comunicação clara, análise individualizada
             e acompanhamento responsável de cada etapa.
+
           </div>
 
 
           <p class="hero-copy">
+
             A defesa criminal exige conhecimento técnico,
             estratégia e atenção aos detalhes. Cada caso é
             analisado de forma individualizada, considerando
             suas particularidades e o momento processual.
+
           </p>
 
 
@@ -1421,6 +1507,19 @@
 
         </div>
 
+
+        <!-- FOTO -->
+
+        <div class="hero-photo">
+
+          <img
+            src="assets/office.jpg"
+            alt="Laura Vitória Eves em seu escritório"
+          >
+
+        </div>
+
+
       </div>
 
     </section>
@@ -1429,7 +1528,8 @@
 
     <!-- =====================================================
          SOBRE
-    ====================================================== -->
+         FOTO REMOVIDA
+    ===================================================== -->
 
     <section
       class="section section-light"
@@ -1438,57 +1538,49 @@
 
       <div class="container">
 
-        <div class="about-grid">
+        <div class="about-content reveal">
 
-
-          <div class="about-image reveal">
-
-            <img
-              src="assets/office.jpg"
-              alt="Escritório de advocacia"
-            >
-
+          <div class="section-kicker">
+            Sobre a atuação
           </div>
 
 
-          <div class="about-text reveal">
-
-            <div class="section-kicker">
-              Sobre a atuação
-            </div>
-
-            <h3>
-              Defesa criminal com
-              estratégia e proximidade.
-            </h3>
+          <h3>
+            Defesa criminal com
+            estratégia e proximidade.
+          </h3>
 
 
-            <p>
-              A atuação na área criminal exige mais do que
-              conhecimento jurídico. Exige atenção ao caso,
-              compreensão das circunstâncias e análise
-              cuidadosa de cada elemento do processo.
-            </p>
+          <p>
+
+            A atuação na área criminal exige mais do que
+            conhecimento jurídico. Exige atenção ao caso,
+            compreensão das circunstâncias e análise
+            cuidadosa de cada elemento do processo.
+
+          </p>
 
 
-            <p>
-              O trabalho é desenvolvido com foco técnico,
-              comunicação clara e acompanhamento próximo,
-              buscando compreender cada situação de forma
-              individualizada.
-            </p>
+          <p>
+
+            O trabalho é desenvolvido com foco técnico,
+            comunicação clara e acompanhamento próximo,
+            buscando compreender cada situação de forma
+            individualizada.
+
+          </p>
 
 
-            <p>
-              Da investigação à fase processual e à execução
-              penal, cada etapa demanda uma estratégia própria.
-            </p>
+          <p>
+
+            Da investigação à fase processual e à execução
+            penal, cada etapa demanda uma estratégia própria.
+
+          </p>
 
 
-            <div class="about-signature">
-              Laura Vitória Eves
-            </div>
-
+          <div class="about-signature">
+            Laura Vitória Eves
           </div>
 
         </div>
@@ -1501,7 +1593,7 @@
 
     <!-- =====================================================
          ÁREAS DE ATUAÇÃO
-    ====================================================== -->
+    ===================================================== -->
 
     <section
       class="section section-white"
@@ -1517,15 +1609,19 @@
             Áreas de atuação
           </div>
 
+
           <h2>
             Atuação em Direito Penal
             e Processo Penal
           </h2>
 
+
           <p>
+
             Acompanhamento jurídico nas diferentes fases
             da persecução penal, desde a investigação até
             a execução da pena.
+
           </p>
 
         </div>
@@ -1545,12 +1641,15 @@
             </h3>
 
             <p>
+
               Atuação imediata em situações de prisão,
               com análise das circunstâncias e das medidas
               jurídicas cabíveis.
+
             </p>
 
           </article>
+
 
 
           <article class="area-card reveal">
@@ -1564,12 +1663,15 @@
             </h3>
 
             <p>
+
               Acompanhamento da audiência e análise das
-              possibilidades jurídicas relacionadas à
-              prisão cautelar.
+              possibilidades jurídicas relacionadas à prisão
+              cautelar.
+
             </p>
 
           </article>
+
 
 
           <article class="area-card reveal">
@@ -1583,12 +1685,15 @@
             </h3>
 
             <p>
+
               Defesa técnica durante a ação penal,
               com análise das provas, teses e estratégias
               processuais aplicáveis ao caso.
+
             </p>
 
           </article>
+
 
 
           <article class="area-card reveal">
@@ -1602,11 +1707,14 @@
             </h3>
 
             <p>
+
               Atuação na elaboração e acompanhamento
               de recursos e medidas perante os tribunais.
+
             </p>
 
           </article>
+
 
 
           <article class="area-card reveal">
@@ -1620,12 +1728,15 @@
             </h3>
 
             <p>
+
               Acompanhamento de questões relacionadas ao
               cumprimento da pena, progressão, remição e
               demais direitos da pessoa condenada.
+
             </p>
 
           </article>
+
 
 
           <article class="area-card reveal">
@@ -1639,9 +1750,11 @@
             </h3>
 
             <p>
+
               Análise de condenações definitivas e das
               hipóteses jurídicas que podem justificar
               o ajuizamento de revisão criminal.
+
             </p>
 
           </article>
@@ -1657,7 +1770,7 @@
 
     <!-- =====================================================
          EXPERIÊNCIA
-    ====================================================== -->
+    ===================================================== -->
 
     <section
       class="section section-dark"
@@ -1665,7 +1778,6 @@
     >
 
       <div class="container">
-
 
         <div class="experience">
 
@@ -1693,24 +1805,27 @@
 
 
             <h2>
-              Técnica jurídica
-              aliada à atenção
-              ao caso concreto.
+              Técnica jurídica aliada
+              à atenção ao caso concreto.
             </h2>
 
 
             <p>
+
               A advocacia criminal exige acompanhamento
               cuidadoso de cada etapa. Por isso, a atuação
               busca unir conhecimento jurídico, análise
               estratégica e comunicação acessível.
+
             </p>
 
 
             <p>
+
               O objetivo é que o cliente compreenda o momento
               processual, as possibilidades jurídicas existentes
               e os próximos passos do caso.
+
             </p>
 
 
@@ -1767,7 +1882,7 @@
 
     <!-- =====================================================
          COMO FUNCIONA
-    ====================================================== -->
+    ===================================================== -->
 
     <section class="section section-light">
 
@@ -1780,15 +1895,19 @@
             Atendimento
           </div>
 
+
           <h2>
             Um processo de atendimento
             claro e organizado
           </h2>
 
+
           <p>
+
             Cada situação é analisada individualmente
             para compreender o momento jurídico e definir
             os próximos passos.
+
           </p>
 
         </div>
@@ -1808,11 +1927,14 @@
             </h3>
 
             <p>
+
               Você apresenta a situação e as principais
               informações relacionadas ao caso.
+
             </p>
 
           </div>
+
 
 
           <div class="process-card reveal">
@@ -1826,11 +1948,14 @@
             </h3>
 
             <p>
+
               São avaliados os documentos, circunstâncias
               e momento processual.
+
             </p>
 
           </div>
+
 
 
           <div class="process-card reveal">
@@ -1844,11 +1969,14 @@
             </h3>
 
             <p>
+
               A partir da análise, são identificadas as
               medidas jurídicas cabíveis.
+
             </p>
 
           </div>
+
 
 
           <div class="process-card reveal">
@@ -1862,8 +1990,10 @@
             </h3>
 
             <p>
+
               O caso é acompanhado de acordo com suas
               necessidades e evolução processual.
+
             </p>
 
           </div>
@@ -1879,7 +2009,7 @@
 
     <!-- =====================================================
          CTA
-    ====================================================== -->
+    ===================================================== -->
 
     <section
       class="cta"
@@ -1894,15 +2024,19 @@
             Atendimento
           </div>
 
+
           <h2>
             Precisa conversar sobre
             uma questão criminal?
           </h2>
 
+
           <p>
+
             Entre em contato para apresentar a situação
             e verificar as possibilidades de atendimento
             jurídico para o seu caso.
+
           </p>
 
 
@@ -1921,14 +2055,13 @@
 
     </section>
 
-
   </main>
 
 
 
-  <!-- =======================================================
+  <!-- =====================================================
        FOOTER
-  ======================================================== -->
+  ===================================================== -->
 
   <footer>
 
@@ -1955,9 +2088,9 @@
 
 
 
-  <!-- =======================================================
+  <!-- =====================================================
        WHATSAPP FLUTUANTE
-  ======================================================== -->
+  ===================================================== -->
 
   <a
     class="whatsapp-float"
@@ -1966,14 +2099,21 @@
     rel="noopener"
     aria-label="Conversar pelo WhatsApp"
   >
-    ☎
+
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.6 4.2 1.7 6L0 24l6.3-1.9a11.9 11.9 0 0 0 5.8 1.5h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.1-3.6-8.2ZM12.1 21.6c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.7 1.1 1.1-3.6-.2-.4a9.7 9.7 0 0 1-1.5-5.2c0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.7-9.8 9.7Zm5.4-7.3c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.7.1-.1.3-.3.4-.5.1-.2.2-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3Z"/>
+    </svg>
+
   </a>
 
 
 
-  <!-- =======================================================
+  <!-- =====================================================
        JAVASCRIPT
-  ======================================================== -->
+  ===================================================== -->
 
   <script>
 
@@ -1983,6 +2123,7 @@
 
     const observer =
       new IntersectionObserver(
+
         (entries) => {
 
           entries.forEach((entry) => {
@@ -1998,9 +2139,11 @@
           });
 
         },
+
         {
           threshold:0.12
         }
+
       );
 
 
